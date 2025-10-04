@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="4.5.2.0" runtimeid="3.5.21.10" libversion="4.5.0.0" compiler="3.5.21.10" lmm="3.5.21.10" profile="CODESYS V3.5 SP21 Patch 1+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="mini-scada-plc-controller" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_DATE_AND_TIME" size="4" swapsize="4" typeclass="DateAndTime" iecname="DATE_AND_TIME" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
+    <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
+    <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeArray name="T_ARRAY__1__20__OF_BOOL" size="20" nativesize="20" typeclass="Array" iecname="ARRAY [1..20] OF BOOL" basetype="T_BOOL">
+      <ArrayDim minrange="1" maxrange="20" />
+    </TypeArray>
+    <TypeUserDef name="T_enProcessState" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="enProcessState" basetype="T_INT">
+      <UserDefElement type="T_enProcessState" iecname="INIT" enumvalue="0" />
+      <UserDefElement type="T_enProcessState" iecname="STANDBY" enumvalue="10" />
+      <UserDefElement type="T_enProcessState" iecname="FILLING_INPUT_TANKS" enumvalue="20" />
+      <UserDefElement type="T_enProcessState" iecname="FILLING_MIXER" enumvalue="30" />
+      <UserDefElement type="T_enProcessState" iecname="MIXING" enumvalue="40" />
+      <UserDefElement type="T_enProcessState" iecname="EMPTYING_MIXER" enumvalue="50" />
+      <UserDefElement type="T_enProcessState" iecname="CYCLE_END" enumvalue="60" />
+      <UserDefElement type="T_enProcessState" iecname="PROCESS_STOPPED" enumvalue="500" />
+    </TypeUserDef>
+    <TypeUserDef name="T_stAlarm" size="88" nativesize="88" typeclass="Userdef" pouclass="STRUCTURE" iecname="stAlarm">
+      <UserDefElement iecname="Code" type="T_UINT" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Message" type="T_STRING" byteoffset="2" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="TriggerTime" type="T_DATE_AND_TIME" byteoffset="84" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_stMixer" size="6" nativesize="8" typeclass="Userdef" pouclass="STRUCTURE" iecname="stMixer">
+      <UserDefElement iecname="Level" type="T_REAL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Active" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Alarm" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_stPump" size="1" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="stPump">
+      <UserDefElement iecname="Active" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_stRecipe" size="16" nativesize="16" typeclass="Userdef" pouclass="STRUCTURE" iecname="stRecipe">
+      <UserDefElement iecname="ID" type="T_UINT" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Ingredient1Level" type="T_REAL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Ingredient2Level" type="T_REAL" byteoffset="8" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="MixingTime" type="T_TIME" byteoffset="12" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_stTank" size="6" nativesize="8" typeclass="Userdef" pouclass="STRUCTURE" iecname="stTank">
+      <UserDefElement iecname="Level" type="T_REAL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Filled" type="T_BOOL" byteoffset="4" vartype="VAR" access="ReadWrite" />
+      <UserDefElement iecname="Alarm" type="T_BOOL" byteoffset="5" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeUserDef name="T_stValve" size="1" nativesize="1" typeclass="Userdef" pouclass="STRUCTURE" iecname="stValve">
+      <UserDefElement iecname="Active" type="T_BOOL" byteoffset="0" vartype="VAR" access="ReadWrite" />
+    </TypeUserDef>
+    <TypeArray name="T_ARRAY__0__19__OF_stAlarm" size="1760" nativesize="1760" typeclass="Array" iecname="ARRAY [0..19] OF stAlarm" basetype="T_stAlarm">
+      <ArrayDim minrange="0" maxrange="19" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__0__99__OF_stRecipe" size="1600" nativesize="1600" typeclass="Array" iecname="ARRAY [0..99] OF stRecipe" basetype="T_stRecipe">
+      <ArrayDim minrange="0" maxrange="99" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__2__OF_stTank" size="16" nativesize="16" typeclass="Array" iecname="ARRAY [1..2] OF stTank" basetype="T_stTank">
+      <ArrayDim minrange="1" maxrange="2" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__5__OF_stPump" size="5" nativesize="5" typeclass="Array" iecname="ARRAY [1..5] OF stPump" basetype="T_stPump">
+      <ArrayDim minrange="1" maxrange="5" />
+    </TypeArray>
+    <TypeArray name="T_ARRAY__1__7__OF_stValve" size="7" nativesize="7" typeclass="Array" iecname="ARRAY [1..7] OF stValve" basetype="T_stValve">
+      <ArrayDim minrange="1" maxrange="7" />
+    </TypeArray>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="GVL">
+        <Node name="Alarm" type="T_BOOL" access="ReadWrite" />
+        <Node name="AlarmsActive" type="T_ARRAY__0__19__OF_stAlarm" access="ReadWrite" />
+        <Node name="CurrentRecipe" type="T_stRecipe" access="ReadWrite" />
+        <Node name="FullAutoMode" type="T_BOOL" access="ReadWrite" />
+        <Node name="Mixer01" type="T_stMixer" access="ReadWrite" />
+        <Node name="ProcessState" type="T_enProcessState" access="ReadWrite" />
+        <Node name="Pumps" type="T_ARRAY__1__5__OF_stPump" access="ReadWrite" />
+        <Node name="RecipeQueue" type="T_ARRAY__0__99__OF_stRecipe" access="ReadWrite" />
+        <Node name="SimulateAlarm" type="T_ARRAY__1__20__OF_BOOL" access="ReadWrite" />
+        <Node name="Start" type="T_BOOL" access="ReadWrite" />
+        <Node name="Stop" type="T_BOOL" access="ReadWrite" />
+        <Node name="Tanks" type="T_ARRAY__1__2__OF_stTank" access="ReadWrite" />
+        <Node name="Valves" type="T_ARRAY__1__7__OF_stValve" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
