@@ -59,6 +59,9 @@
     <TypeArray name="T_ARRAY__0__99__OF_stRecipe" size="1600" nativesize="1600" typeclass="Array" iecname="ARRAY [0..99] OF stRecipe" basetype="T_stRecipe">
       <ArrayDim minrange="0" maxrange="99" />
     </TypeArray>
+    <TypeArray name="T_ARRAY__1__1__OF_stMixer" size="8" nativesize="8" typeclass="Array" iecname="ARRAY [1..1] OF stMixer" basetype="T_stMixer">
+      <ArrayDim minrange="1" maxrange="1" />
+    </TypeArray>
     <TypeArray name="T_ARRAY__1__2__OF_stTank" size="16" nativesize="16" typeclass="Array" iecname="ARRAY [1..2] OF stTank" basetype="T_stTank">
       <ArrayDim minrange="1" maxrange="2" />
     </TypeArray>
@@ -76,7 +79,7 @@
         <Node name="AlarmsActive" type="T_ARRAY__0__19__OF_stAlarm" access="ReadWrite" />
         <Node name="CurrentRecipe" type="T_stRecipe" access="ReadWrite" />
         <Node name="FullAutoMode" type="T_BOOL" access="ReadWrite" />
-        <Node name="Mixer01" type="T_stMixer" access="ReadWrite" />
+        <Node name="Mixer" type="T_ARRAY__1__1__OF_stMixer" access="ReadWrite" />
         <Node name="ProcessState" type="T_enProcessState" access="ReadWrite" />
         <Node name="Pumps" type="T_ARRAY__1__5__OF_stPump" access="ReadWrite" />
         <Node name="RecipeQueue" type="T_ARRAY__0__99__OF_stRecipe" access="ReadWrite" />
