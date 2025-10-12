@@ -18,13 +18,14 @@
     </TypeArray>
     <TypeUserDef name="T_enProcessState" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="enProcessState" basetype="T_INT">
       <UserDefElement type="T_enProcessState" iecname="INIT" enumvalue="0" />
+      <UserDefElement type="T_enProcessState" iecname="WAITING_FOR_RECIPE_SELECTION" enumvalue="5" />
       <UserDefElement type="T_enProcessState" iecname="STANDBY" enumvalue="10" />
       <UserDefElement type="T_enProcessState" iecname="FILLING_INPUT_TANKS" enumvalue="20" />
       <UserDefElement type="T_enProcessState" iecname="FILLING_MIXER" enumvalue="30" />
       <UserDefElement type="T_enProcessState" iecname="MIXING" enumvalue="40" />
       <UserDefElement type="T_enProcessState" iecname="EMPTYING_MIXER" enumvalue="50" />
       <UserDefElement type="T_enProcessState" iecname="CYCLE_END" enumvalue="60" />
-      <UserDefElement type="T_enProcessState" iecname="PROCESS_STOPPED" enumvalue="500" />
+      <UserDefElement type="T_enProcessState" iecname="STOPPED" enumvalue="500" />
     </TypeUserDef>
     <TypeUserDef name="T_stAlarm" size="88" nativesize="88" typeclass="Userdef" pouclass="STRUCTURE" iecname="stAlarm">
       <UserDefElement iecname="Code" type="T_UINT" byteoffset="0" vartype="VAR" access="ReadWrite" />
